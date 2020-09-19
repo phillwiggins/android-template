@@ -5,8 +5,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:4.0.0")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.21")
+        classpath(com.purewowstudio.staticanalysis.Libs.androidGradlePlugin)
+        classpath(com.purewowstudio.staticanalysis.Libs.Kotlin.gradlePlugin)
     }
 }
 allprojects {
