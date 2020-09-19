@@ -1,4 +1,4 @@
-package com.purewowstudio.staticanalysis
+package com.purewowstudio.template
 
 import org.junit.Test
 

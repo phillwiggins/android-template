@@ -1,4 +1,4 @@
-package com.purewowstudio.staticanalysis
+package com.purewowstudio.template
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton

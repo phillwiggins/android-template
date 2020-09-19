@@ -1,26 +1,20 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    kotlin("android")
     id("kotlin-android-extensions")
 }
+
 android {
-    compileSdkVersion(30)
-    buildToolsVersion = "30.0.2"
+    compileSdkVersion(Sdk.COMPILE_SDK_VERSION)
 
     defaultConfig {
-        applicationId = "com.purewowstudio.staticanalysis"
-        minSdkVersion(16)
-        targetSdkVersion(30)
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
+        minSdkVersion(Sdk.MIN_SDK_VERSION)
+        targetSdkVersion(Sdk.TARGET_SDK_VERSION)
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
+        applicationId = App.APP_ID
+        versionCode = App.APP_VERSION_CODE
+        versionName = App.APP_VERSION_NAME
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -29,17 +23,38 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    sourceSets {
+        getByName("main").java.srcDirs("src/main/kotlin")
+    }
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+
+    lintOptions {
+        isWarningsAsErrors = true
+        isAbortOnError = true
+    }
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.10")
-    implementation("androidx.core:core-ktx:1.3.1")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.2.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.1")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.1.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.1.0")
-    testImplementation("junit:junit:4.13")
-    androidTestImplementation("androidx.test.ext:junit:1.1.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    implementation(kotlin("stdlib-jdk7"))
+
+    implementation(SupportLibs.ANDROIDX_APPCOMPAT)
+    implementation(SupportLibs.ANDROIDX_CONSTRAINT_LAYOUT)
+    implementation(SupportLibs.ANDROIDX_CORE_KTX)
+    implementation(SupportLibs.MATERIAL)
+    implementation(SupportLibs.ANDROIDX_NAV_FRAGMENT)
+    implementation(SupportLibs.ANDROIDX_NAV_UI)
+
+    testImplementation(TestingLib.JUNIT)
+
+    androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_EXT_JUNIT)
+    androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_RULES)
+    androidTestImplementation(AndroidTestingLib.ESPRESSO_CORE)
 }

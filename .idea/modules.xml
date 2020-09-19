@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/StaticAnalysisExample.iml" filepath="$PROJECT_DIR$/.idea/modules/StaticAnalysisExample.iml" group="StaticAnalysisExample" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/StaticAnalysisExample_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/StaticAnalysisExample_buildSrc.iml" group="StaticAnalysisExample/StaticAnalysisExample_buildSrc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/android/android.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/android/android.iml" group="StaticAnalysisExample/modules/android" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="StaticAnalysisExample/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/modules/modules.iml" filepath="$PROJECT_DIR$/.idea/modules/modules/modules.iml" group="StaticAnalysisExample/modules" />
     </modules>
   </component>
 </project>
