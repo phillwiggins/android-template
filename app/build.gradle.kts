@@ -64,4 +64,4 @@ tasks.register("installGitHook", Copy::class.java) {
     into("${rootProject.rootDir}/.git/hooks")
 }
 
-tasks.getByPath(":app:preBuild").dependsOn("installGitHook")
+//tasks.getByPath(":app:preBuild").dependsOn("installGitHook")
