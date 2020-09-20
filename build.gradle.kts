@@ -1,5 +1,3 @@
-import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
-
 plugins {
     id("com.android.application") version BuildPluginsVersion.AGP apply false
     id("com.android.library") version BuildPluginsVersion.AGP apply false

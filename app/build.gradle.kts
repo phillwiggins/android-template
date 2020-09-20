@@ -58,3 +58,10 @@ dependencies {
     androidTestImplementation(AndroidTestingLib.ANDROIDX_TEST_RULES)
     androidTestImplementation(AndroidTestingLib.ESPRESSO_CORE)
 }
+
+tasks.register("installGitHook", Copy::class.java) {
+    from("${rootProject.rootDir}/config/commit/pre-push")
+    into("${rootProject.rootDir}/.git/hooks")
+}
+
+tasks.getByPath(":app:preBuild").dependsOn("installGitHook")
