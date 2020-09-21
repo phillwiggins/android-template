@@ -18,4 +18,4 @@ pluginManagement {
 }
 
 include(":app", "modules:android")
-rootProject.name = "StaticAnalysisExample"
+rootProject.name = "template"
