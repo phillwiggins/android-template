@@ -27,12 +27,20 @@ android {
         getByName("main").java.srcDirs("src/main/kotlin")
     }
     buildTypes {
-        getByName("release") {
+        getByName("debug") {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isDebuggable = true
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-dev"
+        }
+        getByName("release") {
+            isMinifyEnabled = true
+            isDebuggable = false
+            isShrinkResources = true
+            isZipAlignEnabled = true
+            isJniDebuggable = false
+            isRenderscriptDebuggable = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 
