@@ -25,6 +25,13 @@ object BuildPluginsVersion {
     const val VERSIONS_PLUGIN = "0.28.0"
 }
 
+object ModulePlugins {
+    const val ANDROID_LIBRARY = "com.android.library"
+    const val ANDROID_APP = "com.android.application"
+    const val KOTLIN_ANDROID = "kotlin-android"
+    const val KOTLIN_ANDROID_EXT = "kotlin-android-extensions"
+}
+
 object SupportLibs {
     const val ANDROIDX_NAV_UI = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION}"
     const val ANDROIDX_NAV_FRAGMENT = "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
